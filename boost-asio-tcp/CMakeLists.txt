@@ -1,0 +1,10 @@
+cmake_minimum_required(VERSION 2.8)
+
+project(example_client)
+project(example_server)
+add_definitions("-std=c++11")
+add_definitions(-DBOOST_ASIO_DISABLE_THREADS)
+add_executable(example_server server.cpp)
+add_executable(example_client client.cpp)
+target_link_libraries(example_server boost_system)
+target_link_libraries(example_client boost_system)
